@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:200");
+
+body {
+	background-image: linear-gradient(135deg, #fd6e6a 10%, #ffc600 100%);
+	margin: 0 auto;
+}
+
+.menu {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+h1 {
+	text-align: center;
+	font-size: 5em;
+}
+
+.menu-list {
+	margin: 0;
+	display: block;
+	align-items: center;
+	width: 400px;
+	padding: 2rem;
+	--borderWidth: 3px;
+	background-image: linear-gradient(135deg, #65fdf0 10%, #1d6fa3 100%);
+	position: relative;
+	border-radius: var(--borderWidth);
+	& + .dropdown-content {
+		border-top: 8px solid #ddd;
+	}
+}
+.menu-list:after {
+	content: "";
+	position: absolute;
+	top: calc(-1 * var(--borderWidth));
+	left: calc(-1 * var(--borderWidth));
+	height: calc(100% + var(--borderWidth) * 2);
+	width: calc(100% + var(--borderWidth) * 2);
+	background: linear-gradient(
+		60deg,
+		#f79533,
+		#f37055,
+		#ef4e7b,
+		#a166ab,
+		#5073b8,
+		#1098ad,
+		#07b39b,
+		#6fba82
+	);
+	border-radius: calc(2 * var(--borderWidth));
+	z-index: -1;
+	animation: animatedgradient 3s ease alternate infinite;
+	background-size: 300% 300%;
+}
+
+@keyframes animatedgradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+}
+
+.dropdown-content {
+	padding: 2rem;
+	display: none;
+	position: absolute;
+	left: 100%;
+	right: 0;
+	z-index: 100;
+	width: 100%;
+	top: 0;
+	flex-direction: column;
+	border-radius: 10px;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	padding: 12px 16px;
+	background-image: linear-gradient(135deg, #65fdf0 10%, #1d6fa3 100%);
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+ul {
+	list-style-type: none;
+}
+
+i {
+	font-size: 24px;
+}
+
+button {
+	text-align: left;
+	width: 100%;
+	margin-left: 0px;
+	padding: 10px;
+	margin-bottom: 10px;
+	background-image: linear-gradient(135deg, #fd6e6a 10%, #ffc600 100%);
+	font-size: 1.2em;
+}
